@@ -67,9 +67,9 @@ public class PinpineatTest {
         Thread.sleep(2000);
         String oldTab = driver.getWindowHandle();
         //find restuarant "Restaurant Mr. Gao"
-        String imgLoc = "//img[@src=\"https://pinpinmarket.s3.amazonaws.com/i/shop62_%E5%B7%9D%E5%91%B3%E9%A6%99shop_image.png\"]";
-//        String imgOut = "//img[@ng-src=\"https://pinpinmarket.s3.amazonaws.com/i/shop88_shop68_thai_shop_image.png\"]";
-        driver.findElement(By.xpath(imgLoc)).click();
+//        String imgLoc = "//img[@src=\"https://pinpinmarket.s3.amazonaws.com/i/shop62_%E5%B7%9D%E5%91%B3%E9%A6%99shop_image.png\"]";
+        String imgOut = "//img[@ng-src=\"https://pinpinmarket.s3.amazonaws.com/i/shop88_shop68_thai_shop_image.png\"]";
+        driver.findElement(By.xpath(imgOut)).click();
         ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
         newTab.remove(oldTab);
         driver.switchTo().window(newTab.get(0));

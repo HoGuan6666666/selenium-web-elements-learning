@@ -69,11 +69,37 @@ public class ScrollPaginationTest {
             Thread.sleep(3000);
             pageNumber--;
         }
-        String gameText = driver.findElement(By.xpath(
-                "/html/body/div[5]/div[1]/div[2]/div[3]/div[3]/div[7]/div[5]/div[1]/h4/span/strong")).getText();
-        assertEquals("Blizzard Entertainment", gameText);
+        String gameText = driver.findElement(By.linkText("A Way Out")).getText();
+        assertEquals("A Way Out", gameText);
         System.out.println("Test done");
     }
+
+//    @Test
+//    public void testScrollPageAnotherWay() throws InterruptedException {
+//        driver.get(baseUrl);
+//
+//        Actions actions = new Actions(driver);
+//        WebElement menuPC = driver.findElement(By.xpath("/html/body/div[4]/ul/li[4]"));
+//        actions.moveToElement(menuPC).perform();
+//        Thread.sleep(3000);
+//        WebElement seeAll = driver.findElement(By.xpath("//a[@href=\"/SearchResult/QuickSearchHeaderPlatform?platform=30\"]"));
+//        String button = seeAll.getText();
+//        actions.moveToElement(seeAll);
+//        actions.click().build().perform();
+//        String filterText = driver.findElement(By.xpath(
+//                "/html/body/div[5]/div[1]/div[2]/div[2]/div/div[1]/div[2]/h4[1]")).getText();
+//        assertEquals("Genre", filterText);
+//        System.out.println("Went to PC game list page successful!");
+//
+//        WebElement lastGame = driver.findElement(By.linkText("A Way Out"));
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", lastGame);
+//        Thread.sleep(500);
+//        System.out.println("Found last element");
+//
+//        String gameText = driver.findElement(By.linkText("A Way Out")).getText();
+//        assertEquals("A Way Out", gameText);
+//        System.out.println("Test done");
+//    }
 
     @After
     public void tearDown() throws Exception {
